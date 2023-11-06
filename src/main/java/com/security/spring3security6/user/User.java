@@ -15,8 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Entity
-@Getter
-@Setter
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,16 +31,7 @@ public class User implements UserDetails {
         // Here should return List of roles
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
-    User user;
-    public User getUser(UserDetails userDetails){
 
-        user.getRole();
-        user.getFirstname();
-        user.getPassword();
-        user.getLastname();
-        user.getUsername();
-        return user;
-    }
 
     @Override
     public String getUsername() {
