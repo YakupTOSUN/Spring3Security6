@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/demo")
 @RequiredArgsConstructor
 public class DemoController {
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasAnyRole('USER','ADMIN')")
     @GetMapping("/user")
     public ResponseEntity<String> hello(){
         return ResponseEntity.ok("Hello from secured");
